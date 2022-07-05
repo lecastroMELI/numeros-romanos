@@ -64,4 +64,10 @@ public class Hello {
         return new ResponseEntity("BAD REQUEST", HttpStatus.BAD_REQUEST);
     }
 
+    // NÚMERO ROMANOS - XX XXII
+    @GetMapping("/numeros-romanos/{decimal}")
+    public ResponseEntity<NumRomanos> numRomano(NumRomanos numRomanos, @PathVariable int decimal) {
+        String result = numRomanos.retornaNumRomano(decimal);
+        return new ResponseEntity(result, HttpStatus.OK);
+    }
 }
